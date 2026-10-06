@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Real Estate Intelligence</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i data-lucide="home"></i>
+            </div>
+
+            <div>
+                <h2>AI Real Estate</h2>
+                <span>Intelligence</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-target="dashboard">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-target="prediction">
+                <i data-lucide="chart-no-axes-combined"></i>
+                <span>Property Prediction</span>
+            </button>
+
+            <button class="nav-item" data-target="recommendations">
+                <i data-lucide="star"></i>
+                <span>Smart Recommendations</span>
+            </button>
+
+            <button class="nav-item" data-target="assistant">
+                <i data-lucide="message-square"></i>
+                <span>AI Chat Assistant</span>
+            </button>
+
+            <button class="nav-item" data-target="knowledge">
+                <i data-lucide="book-open"></i>
+                <span>RAG Knowledge Base</span>
+            </button>
+
+            <button class="nav-item" data-target="market">
+                <i data-lucide="chart-no-axes-combined"></i>
+                <span>Market Insights</span>
+            </button>
+
+            <button class="nav-item" id="savedBtn">
+                <i data-lucide="bookmark"></i>
+                <span>Saved Properties</span>
+            </button>
+
+            <button class="nav-item" id="settingsBtn">
+                <i data-lucide="settings"></i>
+                <span>Settings</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-house">
+                <div class="house-glow"></div>
+
+                <div class="mini-house">
+                    <div class="roof"></div>
+                    <div class="house-body">
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="door"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Smarter Decisions<br>Better Investments</h3>
+
+            <p>
+                AI-powered insights for a brighter real estate future.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input
+                    id="globalSearch"
+                    type="text"
+                    placeholder="Search properties, neighborhoods, or ask a question..."
+                >
+            </div>
+
+            <div class="top-actions">
+
+                <button class="notification-btn" id="notificationBtn">
+                    <i data-lucide="bell"></i>
+                    <span>3</span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Admin</strong>
+                        <small>Real Estate Analyst</small>
+                    </div>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE CONTENT ================= -->
+
+        <div class="content" id="dashboard">
+
+            <!-- HERO -->
+
+            <section class="hero-grid">
+
+                <div class="hero-card">
+
+                    <div class="hero-content">
+
+                        <h1>
+                            Welcome Back, Admin
+                            <span>👋</span>
+                        </h1>
+
+                        <p>
+                            Your AI-powered real estate assistant is ready to help you
+                            analyze, predict, and find the best opportunities.
+                        </p>
+
+                        <div class="hero-shortcuts">
+
+                            <button onclick="scrollToSection('prediction')">
+                                <span class="shortcut-icon green">
+                                    <i data-lucide="chart-column"></i>
+                                </span>
+                                <span>
+                                    Predict Property<br>Values
+                                </span>
+                            </button>
+
+                            <button onclick="scrollToSection('recommendations')">
+                                <span class="shortcut-icon brown">
+                                    <i data-lucide="star"></i>
+                                </span>
+                                <span>
+                                    Get Smart<br>Recommendations
+                                </span>
+                            </button>
+
+                            <button onclick="scrollToSection('assistant')">
+                                <span class="shortcut-icon purple">
+                                    <i data-lucide="message-square"></i>
+                                </span>
+                                <span>
+                                    Chat with<br>AI Assistant
+                                </span>
+                            </button>
+
+                            <button onclick="scrollToSection('knowledge')">
+                                <span class="shortcut-icon orange">
+                                    <i data-lucide="book-open"></i>
+                                </span>
+                                <span>
+                                    Search Knowledge<br>with RAG
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hero-image">
+                        <div class="hero-overlay"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- MARKET OVERVIEW -->
+
+                <div class="market-overview">
+
+                    <div class="card-title">
+
+                        <div>
+                            <i data-lucide="chart-no-axes-combined"></i>
+                            <strong>Market Overview</strong>
+                        </div>
+
+                        <div class="periods">
+                            <button>7D</button>
+                            <button class="active">30D</button>
+                            <button>1Y</button>
+                        </div>
+
+                    </div>
+
+                    <span class="muted-label">
+                        Average Property Price
+                    </span>
+
+                    <h2 id="averagePrice">
+                        $342,000
+                    </h2>
+
+                    <div class="growth">
+                        <span>↑ 6.8%</span>
+                        <small>vs. last month</small>
+                    </div>
+
+                    <div class="mini-chart">
+                        <svg viewBox="0 0 260 100" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="0%" stop-opacity=".22"/>
+                                    <stop offset="100%" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+
+                            <path
+                                d="M0 78 L35 68 L65 65 L95 45 L125 63 L155 54 L185 22 L220 19 L260 0 L260 100 L0 100 Z"
+                                fill="url(#chartFill)"
+                            />
+
+                            <polyline
+                                points="0,78 35,68 65,65 95,45 125,63 155,54 185,22 220,19 260,0"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                            />
+                        </svg>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEATURE CARDS -->
+
+            <section class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon green">
+                        <i data-lucide="chart-column"></i>
+                    </div>
+
+                    <h3>Property Price Prediction</h3>
+
+                    <p>
+                        Enter property details to get an accurate
+                        price prediction using AI.
+                    </p>
+
+                    <button onclick="scrollToSection('prediction')">
+                        Start Prediction
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon brown">
+                        <i data-lucide="star"></i>
+                    </div>
+
+                    <h3>Get Recommendations</h3>
+
+                    <p>
+                        Find the best properties based on
+                        your budget and preferences.
+                    </p>
+
+                    <button onclick="scrollToSection('recommendations')">
+                        Find Properties
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon purple">
+                        <i data-lucide="message-square"></i>
+                    </div>
+
+                    <h3>AI Chat Assistant</h3>
+
+                    <p>
+                        Ask questions about real estate,
+                        investment, or market trends.
+                    </p>
+
+                    <button onclick="scrollToSection('assistant')">
+                        Start Chat
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon orange">
+                        <i data-lucide="book-open"></i>
+                    </div>
+
+                    <h3>RAG Knowledge Base</h3>
+
+                    <p>
+                        Search from our real estate knowledge
+                        base and get expert answers.
+                    </p>
+
+                    <button onclick="scrollToSection('knowledge')">
+                        Search Knowledge
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </article>
+
+            </section>
+
+
+            <!-- ================= LOWER GRID ================= -->
+
+            <section class="dashboard-grid">
+
+                <!-- PREDICTION -->
+
+                <div class="panel prediction-panel" id="prediction">
+
+                    <div class="panel-header">
+
+                        <div class="panel-heading">
+                            <i data-lucide="chart-no-axes-combined"></i>
+                            <h3>Property Prediction Tool</h3>
+                        </div>
+
+                        <button class="link-btn">
+                            View History
+                        </button>
+
+                    </div>
+
+
+                    <form id="predictionForm">
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <label>Overall Quality</label>
+                                <input
+                                    type="number"
+                                    id="overallQual"
+                                    value="7"
+                                    min="1"
+                                    max="10"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Living Area (sq ft)</label>
+                                <input
+                                    type="number"
+                                    id="grLivArea"
+                                    value="1800"
+                                    min="1"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Year Built</label>
+                                <input
+                                    type="number"
+                                    id="yearBuilt"
+                                    value="2005"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Total Basement (sq ft)</label>
+                                <input
+                                    type="number"
+                                    id="totalBsmtSf"
+                                    value="900"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Garage Cars</label>
+                                <input
+                                    type="number"
+                                    id="garageCars"
+                                    value="2"
+                                    min="0"
+                                    max="6"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Full Bath</label>
+                                <input
+                                    type="number"
+                                    id="fullBath"
+                                    value="2"
+                                    min="0"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Bedrooms Above Ground</label>
+                                <input
+                                    type="number"
+                                    id="bedroomAbvGr"
+                                    value="3"
+                                    min="0"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Lot Area (sq ft)</label>
+                                <input
+                                    type="number"
+                                    id="lotArea"
+                                    value="8500"
+                                    min="0"
+                                >
+                            </div>
+
+                            <div class="field">
+                                <label>Neighborhood</label>
+
+                                <select id="neighborhood">
+                                    <option>NAmes</option>
+                                    <option>CollgCr</option>
+                                    <option>OldTown</option>
+                                    <option>Edwards</option>
+                                    <option>Somerst</option>
+                                    <option>NridgHt</option>
+                                    <option>Gilbert</option>
+                                    <option>StoneBr</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="primary-btn" type="submit">
+                            <i data-lucide="sparkles"></i>
+                            Predict Price
+                        </button>
+
+                    </form>
+
+
+                    <div class="prediction-result">
+
+                        <div class="result-icon">
+                            <i data-lucide="chart-column-increasing"></i>
+                        </div>
+
+                        <div class="result-info">
+
+                            <span>Predicted Property Value</span>
+
+                            <strong id="predictionResult">
+                                $412,500
+                            </strong>
+
+                        </div>
+
+                        <div class="confidence">
+                            <span>High Confidence</span>
+                            <small>AI Estimate</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECOMMENDATIONS -->
+
+                <div class="panel recommendations-panel" id="recommendations">
+
+                    <div class="panel-header">
+
+                        <div class="panel-heading">
+                            <i data-lucide="house"></i>
+                            <h3>Recommended Properties</h3>
+                        </div>
+
+                        <button
+                            class="link-btn"
+                            onclick="loadRecommendations()"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div id="recommendationList" class="property-list">
+
+                        <div class="property-item">
+
+                            <div class="property-image house-one"></div>
+
+                            <div class="property-details">
+                                <strong>$356,000</strong>
+                                <span>3 Beds · 2 Baths · 1,650 sq ft</span>
+                                <small>
+                                    <i data-lucide="map-pin"></i>
+                                    NAmes
+                                </small>
+                            </div>
+
+                            <div class="property-badge green-badge">
+                                Best Match
+                            </div>
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="property-item">
+
+                            <div class="property-image house-two"></div>
+
+                            <div class="property-details">
+                                <strong>$298,000</strong>
+                                <span>3 Beds · 2 Baths · 1,420 sq ft</span>
+                                <small>
+                                    <i data-lucide="map-pin"></i>
+                                    Collierville
+                                </small>
+                            </div>
+
+                            <div class="property-badge blue-badge">
+                                Great Value
+                            </div>
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="property-item">
+
+                            <div class="property-image house-three"></div>
+
+                            <div class="property-details">
+                                <strong>$425,000</strong>
+                                <span>4 Beds · 3 Baths · 2,300 sq ft</span>
+                                <small>
+                                    <i data-lucide="map-pin"></i>
+                                    Stone Brook
+                                </small>
+                            </div>
+
+                            <div class="property-badge purple-badge">
+                                Premium
+                            </div>
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="property-item">
+
+                            <div class="property-image house-four"></div>
+
+                            <div class="property-details">
+                                <strong>$312,000</strong>
+                                <span>3 Beds · 2 Baths · 1,750 sq ft</span>
+                                <small>
+                                    <i data-lucide="map-pin"></i>
+                                    Somerset
+                                </small>
+                            </div>
+
+                            <div class="property-badge orange-badge">
+                                Good Option
+                            </div>
+
+                            <button class="heart-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="right-column">
+
+                    <div class="panel location-panel">
+
+                        <div class="panel-header">
+
+                            <div class="panel-heading">
+                                <i data-lucide="map-pin"></i>
+                                <h3>Property Location Insights</h3>
+                            </div>
+
+                            <select>
+                                <option>Iowa, USA</option>
+                                <option>Ames, USA</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="map">
+
+                            <div class="map-grid"></div>
+
+                            <div class="road road-one"></div>
+                            <div class="road road-two"></div>
+                            <div class="road road-three"></div>
+
+                            <div class="map-pin pin-blue p1"></div>
+                            <div class="map-pin pin-green p2"></div>
+                            <div class="map-pin pin-orange p3"></div>
+                            <div class="map-pin pin-purple p4"></div>
+                            <div class="map-pin pin-red p5"></div>
+
+                            <div class="map-center">
+                                <strong>NAmes</strong>
+                                <span>Avg. Price: $342,000</span>
+                            </div>
+
+                            <div class="map-controls">
+                                <button>+</button>
+                                <button>−</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MARKET TRENDS -->
+
+                    <div class="panel market-panel" id="market">
+
+                        <div class="panel-header">
+
+                            <div class="panel-heading">
+                                <i data-lucide="chart-no-axes-combined"></i>
+                                <h3>Market Trends</h3>
+                            </div>
+
+                            <button class="link-btn">
+                                View Details
+                            </button>
+
+                        </div>
+
+
+                        <div class="trend-grid">
+
+                            <div class="trend-card">
+
+                                <div class="trend-icon green">
+                                    ↑
+                                </div>
+
+                                <div>
+                                    <strong>+6.8%</strong>
+                                    <span>Price Growth</span>
+                                    <small>Last 12 months</small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="trend-card">
+
+                                <div class="trend-icon brown">
+                                    <i data-lucide="calendar-days"></i>
+                                </div>
+
+                                <div>
+                                    <strong>28</strong>
+                                    <span>Avg. Days on Market</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="trend-card">
+
+                                <div class="trend-icon purple">
+                                    <i data-lucide="users"></i>
+                                </div>
+
+                                <div>
+                                    <strong>4.2%</strong>
+                                    <span>Rental Yield</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="trend-card">
+
+                                <div class="trend-icon orange">
+                                    $
+                                </div>
+
+                                <div>
+                                    <strong>$278,000</strong>
+                                    <span>Median Price</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= AI ASSISTANT ================= -->
+
+            <section class="ai-section" id="assistant">
+
+                <div class="ai-header">
+
+                    <div class="ai-title">
+
+                        <div class="ai-icon">
+                            <i data-lucide="message-square"></i>
+                        </div>
+
+                        <div>
+                            <h3>AI Real Estate Assistant</h3>
+                            <p>Ask anything about properties, investment, or market trends.</p>
+                        </div>
+
+                    </div>
+
+                    <span class="online-dot">
+                        <span></span> AI Online
+                    </span>
+
+                </div>
+
+
+                <div class="chat-window" id="chatWindow">
+
+                    <div class="assistant-message">
+                        <div class="message-avatar">
+                            AI
+                        </div>
+
+                        <div class="message-bubble">
+                            Hello! 👋 I'm your AI Real Estate Assistant.
+                            Ask me about property analysis, investment ideas,
+                            market trends, or buying guidance.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form id="chatForm" class="chat-input">
+
+                    <input
+                        type="text"
+                        id="chatMessage"
+                        placeholder="Ask your real estate question..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+                        <i data-lucide="send"></i>
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================= RAG ================= -->
+
+            <section class="knowledge-section" id="knowledge">
+
+                <div class="knowledge-header">
+
+                    <div>
+                        <div class="section-label">
+                            <i data-lucide="book-open"></i>
+                            Knowledge Assistant
+                        </div>
+
+                        <h2>Search Real Estate Knowledge</h2>
+
+                        <p>
+                            Get answers from your uploaded real estate
+                            knowledge documents using RAG.
+                        </p>
+                    </div>
+
+                    <div class="rag-status">
+                        <span></span>
+                        Knowledge Base Ready
+                    </div>
+
+                </div>
+
+
+                <form id="ragForm" class="rag-search">
+
+                    <input
+                        type="text"
+                        id="ragQuestion"
+                        placeholder="Ask about property buying, investment, valuation..."
+                    >
+
+                    <button type="submit">
+                        Search Knowledge
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <div id="ragResult" class="rag-result hidden">
+
+                    <div class="rag-answer">
+
+                        <h3>
+                            <i data-lucide="sparkles"></i>
+                            Answer
+                        </h3>
+
+                        <p id="ragAnswer"></p>
+
+                    </div>
+
+                    <div class="rag-sources">
+
+                        <h4>Retrieved Sources</h4>
+
+                        <div id="ragSources"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK ASK ================= -->
+
+            <section class="quick-ask">
+
+                <div class="quick-icon">
+                    <i data-lucide="message-square"></i>
+                </div>
+
+                <div class="quick-text">
+                    <strong>Quick Ask AI</strong>
+                    <span>
+                        Get instant answers about real estate,
+                        market trends, investment tips and more.
+                    </span>
+                </div>
+
+                <form id="quickAskForm">
+
+                    <input
+                        id="quickQuestion"
+                        type="text"
+                        placeholder="Type your question here..."
+                    >
+
+                    <button type="submit">
+                        <i data-lucide="send"></i>
+                    </button>
+
+                </form>
+
+                <div class="popular-questions">
+
+                    <span>Popular Questions:</span>
+
+                    <button data-question="What should I consider before buying a property?">
+                        Best neighborhoods to invest?
+                    </button>
+
+                    <button data-question="How does property price prediction work?">
+                        Price prediction for 3 bed?
+                    </button>
+
+                    <button data-question="What are current real estate market trends?">
+                        Current market trends?
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    <i data-lucide="check-circle"></i>
+    <span id="toastMessage">Done</span>
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

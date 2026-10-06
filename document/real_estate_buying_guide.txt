@@ -1,0 +1,77 @@
+REAL ESTATE BUYING GUIDE
+
+1. UNDERSTANDING A PROPERTY
+
+A property should be evaluated using several factors rather than price alone. Important factors include location, property size, construction quality, age of the property, number of bedrooms, bathrooms, parking or garage availability, and the surrounding neighborhood.
+
+Location is an important consideration because nearby services, transportation, schools, commercial areas, and neighborhood characteristics can influence property demand and value.
+
+Property size should be considered together with layout and usability. A larger living area may provide more usable space, but size alone does not determine whether a property is suitable for a buyer.
+
+2. PROPERTY BUDGET
+
+Buyers should establish a realistic budget before comparing properties. The purchase price is not necessarily the only cost associated with a property.
+
+Additional costs may include maintenance, renovation, taxes, insurance, transaction costs, utilities, and other ownership expenses depending on the location and transaction.
+
+A buyer should avoid selecting a property only because it is close to the maximum available budget.
+
+3. PROPERTY CONDITION
+
+The physical condition of a property can affect its value and future expenses.
+
+Important areas to inspect can include the structure, roof, electrical systems, plumbing, heating or cooling systems, windows, doors, flooring, kitchen, bathrooms, and other major components.
+
+Older properties may require additional maintenance or renovation, although age alone does not determine quality.
+
+4. LOCATION AND NEIGHBORHOOD
+
+Neighborhood characteristics can affect property demand and prices.
+
+Buyers should consider accessibility, transportation, nearby services, local development, environmental factors, and the general characteristics of the area.
+
+A neighborhood should be evaluated according to the buyer's own needs and long-term plans.
+
+5. BEDROOMS AND BATHROOMS
+
+The number of bedrooms and bathrooms is an important property feature.
+
+Families may require more bedrooms, while buyers with different needs may prefer fewer but larger rooms.
+
+Bathrooms can also affect convenience and property desirability.
+
+6. PROPERTY PRICE ESTIMATION
+
+Machine-learning price prediction can provide an estimated property value using historical property data.
+
+A machine-learning prediction is an estimate rather than a guaranteed market price.
+
+The AI Real Estate Intelligence Platform uses the Ames Housing Dataset for its machine-learning price prediction component.
+
+The model considers features such as overall property quality, above-ground living area, year built, basement area, garage capacity, full bathrooms, bedrooms, lot area, and neighborhood.
+
+Historical machine-learning data should not automatically be interpreted as current live market pricing.
+
+7. PROPERTY COMPARISON
+
+Properties should be compared using multiple attributes.
+
+Useful comparison factors include price, living area, bedrooms, bathrooms, property quality, year built, neighborhood, garage capacity, and lot size.
+
+A property with a lower price is not automatically better if it does not satisfy the buyer's requirements.
+
+8. REAL ESTATE INVESTMENT
+
+Real estate investment decisions should consider purchase price, location, potential rental demand, operating expenses, maintenance, taxes, market conditions, financing costs, and long-term objectives.
+
+Historical price increases do not guarantee future returns.
+
+Potential investors should conduct their own financial analysis and verify important information before making investment decisions.
+
+9. PROFESSIONAL VERIFICATION
+
+Property transactions may involve legal, financial, tax, and contractual considerations.
+
+Important documents and transaction details should be verified with appropriate qualified professionals.
+
+The information in this knowledge document is general educational information and should not be treated as legal or financial advice.
